@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt import JWT
@@ -15,7 +17,7 @@ app = Flask(__name__)
 CORS(app)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=1800)
 app.secret_key = 'secret123'
 api = Api(app)
