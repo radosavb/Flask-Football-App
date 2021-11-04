@@ -1,4 +1,4 @@
 # Flask-Football-App
-Backend written in Python with Flask library for footbal-vue app.   
-SqlAlchemy used for modeling db.   
+Backend for football-vue app written in Python (Flask framework).   
+SqlAlchemy used for creating and modeling database.  
 Hosted on Heroku.  
